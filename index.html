@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Elite Horizon Realty – Find your dream home seamlessly. Browse listings, connect with agents, and explore premium real estate services.">
+  <title>Elite Horizon Realty | Find Your Dream Home</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --accent: #14b8a6;
+      --gold: #facc15;
+      --bg: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #f3f4f6;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f172a;
+      --text: #e5e7eb;
+      --card: #1e293b;
+      --muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 1000;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .btn {
+      padding: 0.6rem 1rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(to right, rgba(30,58,138,0.9), rgba(30,58,138,0.6)),
+      url("https://images.unsplash.com/photo-1568605114967-8130f3a36994") center/cover no-repeat;
+      color: white;
+      padding: 6rem 1rem;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .search-bar {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .search-bar input, .search-bar select {
+      padding: 0.6rem;
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4rem 1rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+    }
+
+    /* LISTINGS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 16px;
+    }
+
+    .price {
+      color: var(--accent);
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+
+    /* AGENTS */
+    .agent {
+      text-align: center;
+    }
+
+    .agent img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: auto;
+    }
+
+    /* FORMS */
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    form input, form textarea {
+      padding: 0.7rem;
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 3rem 1rem;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    /* TOGGLE */
+    .toggle {
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body data-theme="light">
+
+<header>
+  <div class="nav">
+    <div class="logo">Elite Horizon Realty</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#listings">Listings</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      <span class="toggle" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></span>
+      <button class="btn">Submit Property</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Find Your Dream Home, Seamlessly</h1>
+    <p>Browse premium listings, connect with expert agents, and move with confidence.</p>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Location">
+      <select>
+        <option>Property Type</option>
+        <option>Villa</option>
+        <option>Apartment</option>
+      </select>
+      <select>
+        <option>Bedrooms</option>
+        <option>2+</option>
+        <option>3+</option>
+        <option>4+</option>
+      </select>
+      <button class="btn">Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- LISTINGS -->
+<section id="listings">
+  <h2>Featured Listings</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Luxury Villa">
+      <h3>4 Bed · 3 Bath Villa</h3>
+      <p>Suburban luxury home with modern interiors.</p>
+      <div class="price">$750,000</div>
+      <button class="btn-outline btn">View Details</button>
+    </div>
+  </div>
+</section>
+
+<!-- AGENTS -->
+<section>
+  <h2>Meet Our Agents</h2>
+  <div class="grid">
+    <div class="card agent">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Agent Jane Doe">
+      <h3>Jane Doe</h3>
+      <p>10+ years experience · Luxury Homes</p>
+      <button class="btn">Contact</button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>
+    Elite Horizon Realty is a premium real estate firm committed to trust, transparency,
+    and client success. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card">Buying Assistance</div>
+    <div class="card">Selling Properties</div>
+    <div class="card">Rentals & Management</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form action="https://formspree.io/f/your-id" method="POST">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <textarea placeholder="Your Message"></textarea>
+    <button class="btn">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>Elite Horizon Realty</h3>
+      <p>Find your dream home with confidence.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>Email: info@elitehorizon.com</p>
+      <p>Phone: +1 234 567 890</p>
+    </div>
+    <div>
+      <h4>Follow Us</h4>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    body.dataset.theme = body.dataset.theme === "dark" ? "light" : "dark";
+  }
+</script>
+
+</body>
+</html>
